@@ -107,7 +107,7 @@ class Game
     name2 = gets.chomp.red
     [name1, name2]
   end
-
+     
   def start_game
     names = get_names
     @player1 = Player.new(names[0], :X, @board)
@@ -116,23 +116,24 @@ class Game
     @board.show_board
     turn until @winner || @turn == 9
 
-          puts "               -------------------------------- "
-          puts "              +-  Get Ready to the Next Battle  -+"
-          puts "               -------------------------------- "
+          puts "               -------------------------------- ".red
+          puts "            +-             LES JOUEURS           -+".blue
+          puts "               -------------------------------- ".red
     puts "              <><><><> #{@player1.name}__VS__#{@player2.name} <><><><><>"
           puts"\n"
+
       if @winner
           puts "****************  #{@winner.name} est le vainqueur!!  **************"
           puts"\n"
       else
-          puts "----->|   Egaliter   |<-----"
+          puts "----->|   Egaliter   |<-----".green
       end
   end  
 
  private
 #---> case de à remplir
   def turn
-    puts "#{@current_player.name}\'s tour. choisir un nombre entre (1-9): "
+    puts "c'est le tour de #{@current_player.name}\'. choisie un nombre entre (1-9): "
     choice = gets.chomp.to_i
    
     if choice > 9 || choice < 1
@@ -152,11 +153,11 @@ class Game
 end
 puts "\n"
 puts "\n"
-puts "            -+----------  WELCOME IN MORPION GAME  ---------+-"
+puts "            -+----------  WELCOME IN MORPION GAME  ---------+-".blue
 puts "\n"
-puts "          -------------------------------------------------   "
-puts "   |Le joueur doit remplir la grille avec son symbole pour gagner !|"
-puts "          -------------------------------------------------   "
+puts "          -------------------------------------------------   ".red
+puts "   |Le joueur doit remplir la grille avec son symbole pour gagner !|".red
+puts "          -------------------------------------------------   ".red
 puts "\n"
 
 game = Game.new
