@@ -1,2 +1,10 @@
 # Morpion_game
-un jeux de case en utilisant CSV, api_drive
+Un jeux de case en utilisant CSV, api_drive
+
+Etape:
+- cloner le repertoire dans votre terminal par git clone
+- Run bundle install
+- Vous devez avoir Ruby 
+- Run Rails s
+
+Et voilà!!
